@@ -1,6 +1,6 @@
 name: pesel_validator
-description: Dart package for PESEL number validation
-version: 0.1.0
+description: A dart package for PESEL number validation. Allows to extract the data that is included in PESEL.
+version: 0.1.1
 homepage: https://github.com/Stempnio/pesel-validator
 
 environment:

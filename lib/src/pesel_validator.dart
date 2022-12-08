@@ -82,7 +82,7 @@ DateTime dateOfBirthFromPesel({
 /// returns sex from pesel number
 ///
 /// throws [InvalidPeselException] if pesel number is invalid
-Sex? sexFromPesel({
+Sex sexFromPesel({
   required String pesel,
 }) {
   if (!validatePesel(pesel: pesel)) {
