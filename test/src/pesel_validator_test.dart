@@ -24,10 +24,10 @@ void main() {
       expect(validatePesel(pesel: '123456789'), false);
     });
 
-    test('sample pesels are valid', () {
-      peselsWithBirthDates.keys.forEach(
-        (element) => expect(validatePesel(pesel: element), true),
-      );
+    test('sample pesel numbers are valid', () {
+      for (final pesel in peselsWithBirthDates.keys) {
+        expect(validatePesel(pesel: pesel), true);
+      }
     });
 
     test('sample pesel, 02070803628, with changed control number is invalid',
@@ -47,12 +47,12 @@ void main() {
     });
 
     test('valid pesel returns correct date of birth', () {
-      peselsWithBirthDates.forEach(
-        (key, value) => expect(
-          dateOfBirthFromPesel(pesel: key),
-          DateTime.parse(value),
-        ),
-      );
+      for (final el in peselsWithBirthDates.entries) {
+        expect(
+          dateOfBirthFromPesel(pesel: el.key),
+          DateTime.parse(el.value),
+        );
+      }
     });
   });
 
