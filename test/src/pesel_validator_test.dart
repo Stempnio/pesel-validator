@@ -1,6 +1,15 @@
 import 'package:pesel_validator/pesel_validator.dart';
 import 'package:test/test.dart';
 
+const peselsWithBirthDates = {
+  '22851768678': '1822-05-17',
+  '00410146213': '2100-01-01',
+  '82321681683': '2082-12-16',
+  '00283128132': '2000-08-31',
+  '90050117935': '1990-05-01',
+  '01620611669': '2201-02-06'
+};
+
 void main() {
   group('pesel validation', () {
     test('empty pesel is not valid', () {
@@ -15,8 +24,10 @@ void main() {
       expect(validatePesel(pesel: '123456789'), false);
     });
 
-    test('sample pesel, 02070803628, is valid', () {
-      expect(validatePesel(pesel: '02070803628'), true);
+    test('sample pesels are valid', () {
+      peselsWithBirthDates.keys.forEach(
+        (element) => expect(validatePesel(pesel: element), true),
+      );
     });
 
     test('sample pesel, 02070803628, with changed control number is invalid',
@@ -36,9 +47,11 @@ void main() {
     });
 
     test('valid pesel returns correct date of birth', () {
-      expect(
-        dateOfBirthFromPesel(pesel: '02070803628'),
-        DateTime.parse('1902-07-08'),
+      peselsWithBirthDates.forEach(
+        (key, value) => expect(
+          dateOfBirthFromPesel(pesel: key),
+          DateTime.parse(value),
+        ),
       );
     });
   });
