@@ -1,8 +1,10 @@
 # Pesel Validator
 
+[![CI][ci_badge]][ci_link]
 [![Pub package][pesel_validator_pub_badge]][pese_validator_pub_link]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
+[![Publisher][publisher_badge]][publisher_link]
 
 A dart package for PESEL number validation
 
@@ -60,7 +62,12 @@ void main() {
   // ageFromPesel(pesel: invalidPesel); // throws InvalidPeselException
 }
 ```
+]
 
+[ci_link]: https://github.com/Stempnio/pesel-validator/actions/workflows/main.yaml
+[ci_badge]:https://github.com/Stempnio/pesel-validator/actions/workflows/main.yaml/badge.svg
+[publisher_link]: https://pub.dev/publishers/jstepien.pl/packages
+[publisher_badge]: https://img.shields.io/pub/publisher/pesel_validator
 [pesel_validator_pub_badge]: https://img.shields.io/pub/v/pesel_validator
 [pese_validator_pub_link]: https://pub.dev/packages/pesel_validator
 [dart_install_link]: https://dart.dev/get-dart
